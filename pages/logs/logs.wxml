@@ -1,0 +1,23 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+
+  <view class="itemView">
+    <input placeholder="key必填" value='{{key}}' class="input" bindinput="keyInput" />
+  </view>
+  <view class="itemView">
+    <input placeholder="value必填" value='{{value}}' class="input" bindinput="valueInput" />
+  </view>
+  <view class="viewName" style="background-color:#fbf9fe">
+    <button class="resetBtn" class="button" bindtap="resetBtnClick">Get</button>
+    <button class="loginBtn" class="button" bindtap="loginBtnClick">Auth</button>
+  </view>
+  <view class="itemView">
+    <input placeholder="value加密 不用填" value='{{secret}}' class="input" bindinput="valueInput" />
+  </view>
+  <view class="itemView">
+    <input placeholder="value解密 不用填" value='{{nosecret}}' class="input" bindinput="valueInput" />
+  </view>
+</view>

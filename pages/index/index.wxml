@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 注册用户 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="itemView">
+    <input placeholder="key必填" value='{{key}}' class="input" bindinput="keyInput" />
+  </view>
+  <view class="itemView">
+    <input placeholder="value必填" value='{{value}}' class="input" bindinput="valueInput" />
+  </view>
+  <view class="viewName" style="background-color:#fbf9fe">
+    <button class="loginBtn" class="button" bindtap="loginBtnClick">Set</button>
+    <button class="resetBtn" class="button" bindtap="resetBtnClick">Get</button>
+  </view>
+  <view class="itemView">
+    <input placeholder="value加密 不用填" value='{{secret}}' class="input" bindinput="valueInput" />
+  </view>
+  <view class="itemView">
+    <input placeholder="value解密 不用填" value='{{nosecret}}' class="input" bindinput="valueInput" />
+  </view>
+</view>
